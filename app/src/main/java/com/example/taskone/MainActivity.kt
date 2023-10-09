@@ -20,6 +20,9 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
 
         val btnImplicit: Button =findViewById(R.id.btn_implicit)
         btnImplicit.setOnClickListener(this)
+
+        val btnFragment: Button =findViewById(R.id.btn_fragment)
+        btnFragment.setOnClickListener(this)
     }
 
     override fun onClick(v: View) {
@@ -35,6 +38,10 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
              intent.putExtra("history", "Anda Sudah Login")
              setResult(RESULT_OK, intent)
              finish()
+            }
+            R.id.btn_fragment-> {
+                val intent = Intent(this@MainActivity, FragmentActivity::class.java)
+                startActivity(intent)
             }
         }
     }
